@@ -5,3 +5,6 @@ This repository shows how to solve 3 problems:
 3. Implementing Telegram Bot which will send message if someone detected (so-called Security-Bot).
 ## Demo Pics
 1. Results of training on Wider Train dataset and examples of inferences on the images.
+### Loss Functions and Metrics
+<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/edit/main/README.md">
+
