@@ -7,28 +7,28 @@ import sys
 import telebot
 from PIL import Image
 import copy
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 
-@st.cache_resource
-def get_token_chatid_path():
-	env_token = os.getenv("API_KEY")
-	env_chat_id = os.getenv("CHAT_ID")
-	pth = os.getenv("_PATH_")
-	return (env_token, env_chat_id, pth)
+#@st.cache_resource
+#def get_token_chatid_path():
+#	env_token = os.getenv("API_KEY")
+#	env_chat_id = os.getenv("CHAT_ID")
+#	pth = os.getenv("_PATH_")
+#	return (env_token, env_chat_id, pth)
+#
+#token, chat_id, pth = get_token_chatid_path()
 
-token, chat_id, pth = get_token_chatid_path()
-
-@st.cache_resource
-def load_bot():
-	bt = telebot.TeleBot(token)
-	return bt 
-bt = load_bot()
+#@st.cache_resource
+#def load_bot():
+#	bt = telebot.TeleBot(token)
+#	return bt 
+#bt = load_bot()
 
 @st.cache_resource
 def load_model():
-	model = torch.hub.load('ultralytics/yolov5', 'custom', path=pth)
+	model = torch.hub.load('ultralytics/yolov5.pt', 'custom', path = 'weights/yolov5.pt')
 	model.eval()
 	return model
 
@@ -49,13 +49,13 @@ finish = st.sidebar.button('Exit')
 t = st.empty()
 
 old_amount = -1
-if finish:
-	bt.send_message(chat_id, text = 'Finish Detecting')
-	sys.exit(0)
+#if finish:
+#	bt.send_message(chat_id, text = 'Finish Detecting')
+#	sys.exit(0)
 
 if camera:
 	if camera == 'Webcam':
-		if amount: bt.send_message(chat_id, "Start Detecting with {}".format(camera) )
+		#if amount: bt.send_message(chat_id, "Start Detecting with {}".format(camera) )
 		model = load_model()
 
 		cap = cv2.VideoCapture(0)
@@ -89,9 +89,9 @@ if camera:
 				if amount == True:
 					if new_amount != old_amount:
 						old_amount = new_amount
-						if new_amount > 0: 
-							bt.send_message(chat_id, 'Someone is detected')
-							bt.send_photo(chat_id, Image.fromarray(img))
+						#if new_amount > 0: 
+							#bt.send_message(chat_id, 'Someone is detected')
+							#bt.send_photo(chat_id, Image.fromarray(img))
 						on_update(new_amount)
 
 			stframe.image(rgb_image, use_column_width = True)
