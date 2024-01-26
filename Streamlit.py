@@ -12,12 +12,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 @st.cache_resource
-def get_token_chatid():
+def get_token_chatid_path():
 	env_token = os.getenv("API_KEY")
 	env_chat_id = os.getenv("CHAT_ID")
-	return (env_token, env_chat_id)
+	pth = os.getenv("_PATH_")
+	return (env_token, env_chat_id, pth)
 
-token, chat_id = get_token_chatid()
+token, chat_id, pth = get_token_chatid_path()
 
 @st.cache_resource
 def load_bot():
@@ -27,10 +28,10 @@ bt = load_bot()
 
 @st.cache_resource
 def load_model():
-	pth = '/Users/ivanpodoynikov/Documents/GitHub/Object-Detection-YoloV5/weights/yolov5.pt'
 	model = torch.hub.load('ultralytics/yolov5', 'custom', path=pth)
 	model.eval()
 	return model
+
 def on_update(count):
 	t.text(f'Amount of detections: {count}')
 
