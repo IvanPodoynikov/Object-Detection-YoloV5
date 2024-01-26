@@ -1,31 +1,37 @@
 import streamlit as st
 import torch
+import os
 import cv2
 import time
 import sys
 import telebot
 from PIL import Image
 import copy
+from dotenv import load_dotenv
 
-TOKEN = '6985168300:AAGMtwb7wa1YfC5Ulc5xg1BmbONdvHmjer8'
-chat_id = 916625140
+load_dotenv()
+
+@st.cache_resource
+def get_token_chatid():
+	env_token = os.getenv("API_KEY")
+	env_chat_id = os.getenv("CHAT_ID")
+	return (env_token, env_chat_id)
+
+token, chat_id = get_token_chatid()
+
 @st.cache_resource
 def load_bot():
-	api_token = TOKEN
-	bt = telebot.TeleBot(api_token)
+	bt = telebot.TeleBot(token)
 	return bt 
-
 bt = load_bot()
 
 @st.cache_resource
 def load_model():
-	model = torch.hub.load('ultralytics/yolov5', 'custom', 
-                      path='/Users/ivanpodoynikov/Jupyter/DLS/runs/train/exp/weights/best.pt')
+	pth = '/Users/ivanpodoynikov/Documents/GitHub/Object-Detection-YoloV5/weights/yolov5.pt'
+	model = torch.hub.load('ultralytics/yolov5', 'custom', path=pth)
 	model.eval()
 	return model
-
 def on_update(count):
-	data = count
 	t.text(f'Amount of detections: {count}')
 
 st.title("Face Detection App")
