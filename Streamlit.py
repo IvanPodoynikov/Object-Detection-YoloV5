@@ -1,11 +1,8 @@
 import streamlit as st
 import torch
-import os
+#import os
 import cv2
-import time
-import sys
-import telebot
-from PIL import Image
+#import telebot
 import copy
 #from dotenv import load_dotenv
 
