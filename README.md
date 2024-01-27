@@ -49,9 +49,13 @@ You will get json file, You need message -> chat -> id.
 
 - Create .env file in project's root directory and put this code with Your key, chat_id, path here
 ```python
-API_KEY = "PASTE/YOUR/API_KEY/HERE"
+API_KEY = PASTE/YOUR/API_KEY/HERE
 CHAT_ID = PASTE/YOUR/CHAT_ID/HERE
-_PATH_ = "PASTE/YOUR/PATH/TO/yolov5.pt" # it is in the cloned directory ./weights/yolov5.pt
+_PATH_ = PASTE/YOUR/PATH/TO/yolov5.pt # it is in the cloned directory ./weights/yolov5.pt
+```
+or copy that, paying attention on 
+```bash
+echo -e "API_KEY = PASTE/YOUR/API_KEY/FROM/BOT_FATHER/HERE\nCHAT_ID = PASTE/YOUR/CHAT_ID/FROM/BOTRAW/HERE\n_PATH_ = PASTE/YOUR/PATH/TO/yolov5.pt/HERE" > .env
 ```
 
 
