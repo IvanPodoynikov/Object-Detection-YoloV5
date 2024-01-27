@@ -1,9 +1,9 @@
 import streamlit as st
 import torch
 #import os
-import cv2
+#import cv2
 #import telebot
-import copy
+#import copy
 #from dotenv import load_dotenv
 
 #load_dotenv()
@@ -55,40 +55,40 @@ if camera:
 		#if amount: bt.send_message(chat_id, "Start Detecting with {}".format(camera) )
 		model = load_model()
 
-		cap = cv2.VideoCapture(0)
-		frame_width = int(cap.get(3))
-		frame_height = int(cap.get(4))
+		# cap = cv2.VideoCapture(0)
+		# frame_width = int(cap.get(3))
+		# frame_height = int(cap.get(4))
 
-		while True:
+		# while True:
 
-			success, img = cap.read()
-			img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-			rgb_image = copy.copy(img)
-			if success:
+		# 	success, img = cap.read()
+		# 	img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+		# 	rgb_image = copy.copy(img)
+		# 	if success:
 
-				results = model(img)
-				df = results.pandas().xyxy[0]
-				new_amount = df.shape[0]
+		# 		results = model(img)
+		# 		df = results.pandas().xyxy[0]
+		# 		new_amount = df.shape[0]
 
-				for ind in df.index:
+		# 		for ind in df.index:
 
-					x1, y1 = int(df['xmin'][ind]), int(df['ymin'][ind])
-					x2, y2 = int(df['xmax'][ind]), int(df['ymax'][ind])
-					label = df['name'][ind]
-					conf = "{:.2f}".format(df['confidence'][ind])
+		# 			x1, y1 = int(df['xmin'][ind]), int(df['ymin'][ind])
+		# 			x2, y2 = int(df['xmax'][ind]), int(df['ymax'][ind])
+		# 			label = df['name'][ind]
+		# 			conf = "{:.2f}".format(df['confidence'][ind])
 
-					cv2.rectangle(rgb_image, (x1, y1), (x2, y2), (255, 0, 255), 2)
-					if use_label:
-						cv2.putText(rgb_image, label, (x1, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
-					if use_conf:
-						cv2.putText(rgb_image, conf, (x2, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
+		# 			cv2.rectangle(rgb_image, (x1, y1), (x2, y2), (255, 0, 255), 2)
+		# 			if use_label:
+		# 				cv2.putText(rgb_image, label, (x1, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
+		# 			if use_conf:
+		# 				cv2.putText(rgb_image, conf, (x2, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
 						
-				if amount == True:
-					if new_amount != old_amount:
-						old_amount = new_amount
-						#if new_amount > 0: 
-							#bt.send_message(chat_id, 'Someone is detected')
-							#bt.send_photo(chat_id, Image.fromarray(img))
-						on_update(new_amount)
+		# 		if amount == True:
+		# 			if new_amount != old_amount:
+		# 				old_amount = new_amount
+		# 				#if new_amount > 0: 
+		# 					#bt.send_message(chat_id, 'Someone is detected')
+		# 					#bt.send_photo(chat_id, Image.fromarray(img))
+		# 				on_update(new_amount)
 
-			stframe.image(rgb_image, use_column_width = True)
+		# 	stframe.image(rgb_image, use_column_width = True)
