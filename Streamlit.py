@@ -13,9 +13,9 @@ load_dotenv()
 # Loading token, chatid, path to Model from .env file
 @st.cache_resource
 def get_token_chatid_path():
-	env_token = os.getenv("API_KEY")
-	env_chat_id = os.getenv("CHAT_ID")
-	pth = os.getenv("_PATH_")
+	env_token = str(os.getenv("API_KEY"))
+	env_chat_id = int(os.getenv("CHAT_ID"))
+	pth = str(os.getenv("_PATH_"))
 	return (env_token, env_chat_id, pth)
 token, chat_id, pth = get_token_chatid_path()
 
