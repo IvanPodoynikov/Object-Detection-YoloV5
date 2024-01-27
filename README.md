@@ -48,9 +48,9 @@ pip install -r requirements.txt  # install
 You will get json file, You need message -> chat -> id.
 
 - Create .env file in project's root directory and put this code with Your key, chat_id, path here
-```bash
-API_KEY = "PASTE/YOUR/API_KEY/HERE
-CHAT_ID = PASTE/YOUR/chat_id/HERE
+```python
+API_KEY = "PASTE/YOUR/API_KEY/HERE"
+CHAT_ID = PASTE/YOUR/CHAT_ID/HERE
 _PATH_ = "PASTE/YOUR/PATH/TO/yolov5.pt" # it is in the cloned directory ./weights/yolov5.pt
 ```
 
