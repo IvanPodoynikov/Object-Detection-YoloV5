@@ -1,3 +1,5 @@
 streamlit
 torch
 opencv-python
+pyTelegramBotAPI
+Pillow
