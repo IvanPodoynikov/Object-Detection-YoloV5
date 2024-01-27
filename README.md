@@ -53,10 +53,11 @@ API_KEY = PASTE/YOUR/API_KEY/HERE
 CHAT_ID = PASTE/YOUR/CHAT_ID/HERE
 _PATH_ = PASTE/YOUR/PATH/TO/yolov5.pt # it is in the cloned directory ./weights/yolov5.pt
 ```
-or copy that, paying attention on 
+or copy that in the terminal
 ```bash
 echo -e "API_KEY = PASTE/YOUR/API_KEY/FROM/BOT_FATHER/HERE\nCHAT_ID = PASTE/YOUR/CHAT_ID/FROM/BOTRAW/HERE\n_PATH_ = PASTE/YOUR/PATH/TO/yolov5.pt/HERE" > .env
 ```
+
 
 
 
