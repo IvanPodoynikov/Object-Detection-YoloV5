@@ -62,6 +62,9 @@ echo -e "API_KEY = PASTE/YOUR/API_KEY/FROM/BOT_FATHER/HERE\nCHAT_ID = PASTE/YOUR
 <details>
 <summary>Running</summary>
 Run it with Streamlit and open <a href = "http://localhost:8501/">http://localhost:8501/</a>.
+```bash
+streamlit run ./Streamlit.py
+```
 
 
 
