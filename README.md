@@ -39,10 +39,8 @@ pip install -r requirements.txt  # install
 <details>
 <summary>Get bot</summary>
 
-- Open <a href = "https://telegram.me/BotFather">Bot Father</a> in Telegram and type
-```bash
-/newbot
-```
+- Open <a href = "https://telegram.me/BotFather">Bot Father</a> in Telegram and type "/newbot"
+
 - Choose name for Your bot and username, You should get something like this. You need API key from here.  
 ![Bot](https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/6e65f23f-a421-4f1c-84e0-c4fa5b3e71de)
 
