@@ -3,17 +3,25 @@ This repository shows how to solve 3 problems:
 1. Training YoloV5 on <a href="http://shuoyang1213.me/WIDERFACE/">Wider Train</a> dataset for video face recognition.
 2. Making web-demo using interactive <a href="https://streamlit.io">Streamlit</a>.  
    I decided not to use Streamlit cloud because project is for local usage.
-4. Implementing Telegram Bot which will send message if someone detected (so-called Security-Bot).
-##  First Problem
+3. Implementing Telegram Bot which will send message if someone detected (so-called Security-Bot).
+## <div align="center">Photo and video examples</div>
+###  First Problem
 
-### Loss Functions and Metrics
+#### Loss Functions and Metrics
 <img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/blob/main/assets/results.png" >
 
-### First bunch of photos
+#### First bunch of photos
 <img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/blob/main/assets/pic_1.jpg" >
 
-### Second bunch of photos
+#### Second bunch of photos
 <img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/blob/main/assets/pic_2.jpg" >
 
-## Second and Third Problem
+### Second and Third Problem
 https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/b252210b-06a4-4bf7-aa54-b61146bc014a
+
+## <div align="center">Documentation</div>
+Get started with
+```bash
+pip install ultralytics
+```
+
