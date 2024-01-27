@@ -1,2 +1,5 @@
-streamlit_webrtc
-opencv-python-headless
+streamlit
+torch
+opencv-python
+pyTelegramBotAPI
+Pillow
