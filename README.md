@@ -25,3 +25,26 @@ Get started with
 pip install ultralytics
 ```
 
+<details open>
+<summary>Install</summary>
+   
+Clone repo and install requirements
+```bash
+git clone https://github.com/IvanPodoynikov/Object-Detection-YoloV5  # clone
+cd Object-Detection-Yolov5
+pip install -r requirements.txt  # install
+```
+</details>
+
+<details>
+<summary>Get bot</summary>
+
+- Open <a href = "https://telegram.me/BotFather">Bot Father</a> in Telegram and type
+```bash
+/newbot
+```
+- Choose name for Your bot and username, You should get something like this
+
+
+
+
