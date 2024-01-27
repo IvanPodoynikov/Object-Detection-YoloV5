@@ -3,4 +3,3 @@ torch
 opencv-python
 pyTelegramBotAPI
 Pillow
-ultralytics
