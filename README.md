@@ -57,6 +57,13 @@ or copy that in the terminal
 ```bash
 echo -e "API_KEY = PASTE/YOUR/API_KEY/FROM/BOT_FATHER/HERE\nCHAT_ID = PASTE/YOUR/CHAT_ID/FROM/BOTRAW/HERE\n_PATH_ = PASTE/YOUR/PATH/TO/yolov5.pt/HERE" > .env
 ```
+</details>
+
+<details>
+<summary>Running</summary>
+Run it with Streamlit and open <a href = "http://localhost:8501/">http://localhost:8501/</a>.
+
+
 
 
 
