@@ -22,7 +22,16 @@ Get started with
 pip install ultralytics
 ```
 
+If You want to use program without training Your own model, skip next step.
+
 <details open>
+<summary>Training</summary>
+   
+Open Train.ipynb in Google Colab and follow instructions
+   
+</details>
+
+<details>
 <summary>Install</summary>
    
 Clone repo and install requirements
@@ -44,7 +53,7 @@ pip install -r requirements.txt  # install
 - Open <a href = "https://t.me/RawDataBot">RawDataBot</a> in Telegram and type: "/start". 
 You will get json file, You need message -> chat -> id.
 
-- Create .env file in project's root directory and put this code with Your key, chat_id, path here
+- Create .env file in project's root directory and put this code with Your key, chat_id, path (There you should write path to Your weights, if You trained Yolo) here
 ```python
 API_KEY = PASTE/YOUR/API_KEY/HERE
 CHAT_ID = PASTE/YOUR/CHAT_ID/HERE
