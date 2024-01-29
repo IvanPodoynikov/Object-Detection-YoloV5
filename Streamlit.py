@@ -5,35 +5,36 @@ import cv2
 import sys
 import telebot
 from PIL import Image
+from ultralytics import YOLO
 
 # Get info from .env file
 from dotenv import load_dotenv
 load_dotenv()
 
-#@st.cache_resource
-#def get_token_chatid_path():
-#	env_token = os.getenv("API_KEY")
-#	env_chat_id = os.getenv("CHAT_ID")
-#	pth = os.getenv("_PATH_")
-#	return (env_token, env_chat_id, pth)
-#
-#token, chat_id, pth = get_token_chatid_path()
+@st.cache_resource
+def get_token_chatid_path():
+	env_token = str(os.getenv("API_KEY"))
+	env_chat_id = int(os.getenv("CHAT_ID"))
+	pth = str(os.getenv("_PATH_"))
+	return (env_token, env_chat_id, pth)
+
+token, chat_id, pth = get_token_chatid_path()
 
 # Loading Telegram Bot
 @st.cache_resource
 def load_bot():
 	bt = telebot.TeleBot(token)
-	
 	return bt 
 bt = load_bot()
 
 #Loading model
 @st.cache_resource
 def load_model():
-	with st.spinner('Loading model'): model = torch.hub.load('ultralytics/yolov5', 'custom', path=pth)
-	model.eval()
-	return model
-model = load_model()
+	with st.spinner('Loading model'): 
+		model = YOLO(pth)
+		names = model.names
+	return model, names
+model, names = load_model()
 
 # Updating amount of detections
 def on_update(count):
@@ -78,23 +79,26 @@ if camera:
 			if success:
 				
 				# Making predictions
-				results = model(img)
-				df = results.pandas().xyxy[0]
-				new_amount = df.shape[0]
+				results = model.predict(img)
+				for result in results:
 
-				# Show out image with predictions
-				for ind in df.index:
+					boxes = result.boxes
+					new_amount = len(result)
 
-					x1, y1 = int(df['xmin'][ind]), int(df['ymin'][ind])
-					x2, y2 = int(df['xmax'][ind]), int(df['ymax'][ind])
-					label = df['name'][ind]
-					conf = "{:.2f}".format(df['confidence'][ind])
+					for box in boxes:
+						
+						x1, y1 = int(box.xyxy[0][0]), int(box.xyxy[0][1])
+						x2, y2 = int(box.xyxy[0][2]), int(box.xyxy[0][3])
 
-					cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 2)
-					if use_label:
-						cv2.putText(img, label, (x1, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
-					if use_conf:
-						cv2.putText(img, conf, (x2, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
+						conf = box.conf[0]
+						cls = int(box.cls)
+						label = str(names[cls])
+
+						cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 2)
+						if use_label:
+							cv2.putText(img, label, (x1, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
+						if use_conf:
+							cv2.putText(img, "{:.2f}".format(conf), (x2, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
 				
 				# If number of detected people changed, send message and photo in Telegram
 				if amount == True:
