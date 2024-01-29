@@ -1,2 +1,5 @@
 streamlit
 opencv-python
+pyTelegramBotAPI
+python-dotenv
+ultralytics
