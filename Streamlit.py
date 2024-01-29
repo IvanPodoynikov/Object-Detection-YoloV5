@@ -11,6 +11,7 @@ from ultralytics import YOLO
 from dotenv import load_dotenv
 load_dotenv()
 
+# Get token, chat_id and path
 @st.cache_resource
 def get_token_chatid_path():
 	env_token = str(os.getenv("API_KEY"))
@@ -85,6 +86,15 @@ if camera:
 					boxes = result.boxes
 					new_amount = len(result)
 
+					# If number of detected people changed, send message and photo in Telegram
+					if amount == True:
+						if new_amount != old_amount:
+							old_amount = new_amount
+							if new_amount > 0: 
+								bt.send_message(chat_id, 'Someone is detected')
+								bt.send_photo(chat_id, Image.fromarray(img))
+							on_update(new_amount)
+
 					for box in boxes:
 						
 						x1, y1 = int(box.xyxy[0][0]), int(box.xyxy[0][1])
@@ -100,13 +110,4 @@ if camera:
 						if use_conf:
 							cv2.putText(img, "{:.2f}".format(conf), (x2, y1-5), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
 				
-				# If number of detected people changed, send message and photo in Telegram
-				if amount == True:
-					if new_amount != old_amount:
-						old_amount = new_amount
-						if new_amount > 0: 
-							bt.send_message(chat_id, 'Someone is detected')
-							bt.send_photo(chat_id, Image.fromarray(img))
-						on_update(new_amount)
-
 			stframe.image(img, use_column_width = True)
