@@ -22,7 +22,7 @@ Get started with
 pip install ultralytics
 ```
 
-If You want to use program without training Your own model, skip next step.
+If You want to use program without training Your own model, skip Training step.
 
 <details open>
 <summary>Training</summary>
