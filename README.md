@@ -8,13 +8,13 @@ This repository shows how to solve 3 problems:
 ###  First Problem
 
 #### Loss Functions and Metrics
-<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/7cfe86c6-fd27-4d1c-a836-2d5990f08839" >
+<img src="https://github.com/IvanPodoynikov/YoloV8-Object-Detection/assets/157584243/7cfe86c6-fd27-4d1c-a836-2d5990f08839" >
 
 #### Bunch of photos
-<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/77d4a598-a9c3-4938-97ae-9f719589d35f" >
+<img src="https://github.com/IvanPodoynikov/YoloV8-Object-Detection/assets/157584243/77d4a598-a9c3-4938-97ae-9f719589d35f" >
 
 ### Second and Third Problem
-https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/b252210b-06a4-4bf7-aa54-b61146bc014a
+https://github.com/IvanPodoynikov/YoloV8-Object-Detection/assets/157584243/b252210b-06a4-4bf7-aa54-b61146bc014a
 
 ## <div align="center">Documentation</div>
 Get started with
@@ -27,8 +27,8 @@ pip install ultralytics
    
 Clone repo and install requirements
 ```bash
-git clone https://github.com/IvanPodoynikov/Object-Detection-YoloV5  # clone
-cd Object-Detection-Yolov5
+git clone https://github.com/IvanPodoynikov/YoloV8-Object-Detection  # clone
+cd YoloV8-Object-Detection
 pip install -r requirements.txt  # install
 ```
 </details>
@@ -39,7 +39,7 @@ pip install -r requirements.txt  # install
 - Open <a href = "https://telegram.me/BotFather">Bot Father</a> in Telegram and type "/newbot"
 
 - Choose name for Your bot and username, You should get something like this. You need API key from here.  
-![Bot](https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/6e65f23f-a421-4f1c-84e0-c4fa5b3e71de)
+![Bot](https://github.com/IvanPodoynikov/YoloV8-Object-Detection/assets/157584243/6e65f23f-a421-4f1c-84e0-c4fa5b3e71de)
 
 - Open <a href = "https://t.me/RawDataBot">RawDataBot</a> in Telegram and type: "/start". 
 You will get json file, You need message -> chat -> id.
@@ -48,11 +48,11 @@ You will get json file, You need message -> chat -> id.
 ```python
 API_KEY = PASTE/YOUR/API_KEY/HERE
 CHAT_ID = PASTE/YOUR/CHAT_ID/HERE
-_PATH_ = PASTE/YOUR/PATH/TO/yolov5.pt # it is in the cloned directory ./weights/yolov5.pt
+_PATH_ = PASTE/YOUR/PATH/TO/Yolov8.pt # it is in the cloned directory ./weights/Yolov8.pt
 ```
 or copy that in the terminal
 ```bash
-echo -e "API_KEY = PASTE/YOUR/API_KEY/FROM/BOT_FATHER/HERE\nCHAT_ID = PASTE/YOUR/CHAT_ID/FROM/BOTRAW/HERE\n_PATH_ = PASTE/YOUR/PATH/TO/yolov5.pt/HERE" > .env
+echo -e "API_KEY = PASTE/YOUR/API_KEY/FROM/BOT_FATHER/HERE\nCHAT_ID = PASTE/YOUR/CHAT_ID/FROM/BOTRAW/HERE\n_PATH_ = PASTE/YOUR/PATH/TO/Yolov8.pt/HERE" > .env
 ```
 </details>
 
