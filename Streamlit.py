@@ -10,14 +10,14 @@ from PIL import Image
 from dotenv import load_dotenv
 load_dotenv()
 
-# Loading token, chatid, path to Model from .env file
-@st.cache_resource
-def get_token_chatid_path():
-	env_token = os.getenv("API_KEY")
-	env_chat_id = os.getenv("CHAT_ID")
-	pth = os.getenv("_PATH_")
-	return (env_token, env_chat_id, pth)
-token, chat_id, pth = get_token_chatid_path()
+#@st.cache_resource
+#def get_token_chatid_path():
+#	env_token = os.getenv("API_KEY")
+#	env_chat_id = os.getenv("CHAT_ID")
+#	pth = os.getenv("_PATH_")
+#	return (env_token, env_chat_id, pth)
+#
+#token, chat_id, pth = get_token_chatid_path()
 
 # Loading Telegram Bot
 @st.cache_resource
