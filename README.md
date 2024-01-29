@@ -8,13 +8,10 @@ This repository shows how to solve 3 problems:
 ###  First Problem
 
 #### Loss Functions and Metrics
-<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/blob/main/assets/results.png" >
+<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/7cfe86c6-fd27-4d1c-a836-2d5990f08839" >
 
-#### First bunch of photos
-<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/blob/main/assets/pic_1.jpg" >
-
-#### Second bunch of photos
-<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/blob/main/assets/pic_2.jpg" >
+#### Bunch of photos
+<img src="https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/77d4a598-a9c3-4938-97ae-9f719589d35f" >
 
 ### Second and Third Problem
 https://github.com/IvanPodoynikov/Object-Detection-YoloV5/assets/157584243/b252210b-06a4-4bf7-aa54-b61146bc014a
