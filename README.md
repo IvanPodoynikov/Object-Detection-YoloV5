@@ -2,7 +2,9 @@
 This repository shows how to solve 3 problems:  
 1. Training YoloV8 on <a href="http://shuoyang1213.me/WIDERFACE/">Wider Train</a> dataset for video face recognition.
 2. Making web-demo using interactive <a href="https://streamlit.io">Streamlit</a>.  
-   I decided not to use Streamlit cloud because project is for local usage.
+   I decided not to use Streamlit cloud because project is for local usage.  
+   Also I have no USB-camera right now, that's why I decided to use web-camera to show, how it works.
+
 3. Implementing Telegram Bot which will send message if someone detected (so-called Security-Bot).
 ## <div align="center">Photo and video examples</div>
 ###  First Problem
